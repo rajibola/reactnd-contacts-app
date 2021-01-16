@@ -1,10 +1,11 @@
 import React, {Component} from 'react';
 
 const ListContacts = (props) => {
-  const {contacts} = props;
+  const {contacts, onClick} = props;
   return (
     <ol className='contact'>
-      {contacts.map(({name, id, handle, avatarURL}) => {
+      {contacts.map((contact) => {
+        const {name, id, handle, avatarURL} = contact;
         return (
           <li key={id} className='contact-list-item'>
             <div
@@ -15,7 +16,10 @@ const ListContacts = (props) => {
               <p>{name}</p>
               <p>{handle}</p>
             </div>
-            <button className='contact-remove' />
+            <button
+              className='contact-remove'
+              onClick={() => onClick(contact)}
+            />
           </li>
         );
       })}
