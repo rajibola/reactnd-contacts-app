@@ -6,7 +6,7 @@ class ListContacts extends Component {
   state = {
     query: '',
   };
-  static PropTypes = {
+  static propTypes = {
     contacts: PropTypes.array.isRequired,
     onClick: PropTypes.func.isRequired,
   };
